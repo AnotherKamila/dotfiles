@@ -1,0 +1,16 @@
+[user]
+	name = Kamila Souckova
+	email = kamila@ksp.sk
+[color]
+	ui = auto
+[alias]
+	ci = commit
+	st = status
+	p  = add --patch
+	br = branch
+	co = checkout
+	lg = log --all --graph --color --pretty=format:'%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
+[core]
+	pager = {{PAGER}}
+[push]
+	default = upstream

@@ -1,0 +1,7 @@
+---
+# parameters for generating dotfiles used on my personal laptop (usually
+# called entropy)
+EDITOR:  subl -n
+BROWSER: chromium-browser --force-device-scale-factor=1.5
+PAGER:   less
+---
