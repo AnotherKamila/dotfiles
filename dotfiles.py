@@ -7,6 +7,7 @@ Run with --help for usage.
 
 import os
 import subprocess
+import stat
 import sys
 
 import click
@@ -66,6 +67,8 @@ def generate(params):
     """Generate config files from the templates and params."""
     os.makedirs(conf['out_dir'], exist_ok=True)
     params_obj = yaml.load(params)
+    params_obj['_DOTFILES_DIR'] = os.path.dirname(os.path.abspath(sys.argv[0]))
+    params_obj['_DOTFILES_PARAMS_FILE'] = params.name
     for tpldir in conf['template_dirs']:
         for in_file_path in find_files_in(tpldir):
             base_file_path = os.path.relpath(in_file_path, tpldir)
@@ -73,6 +76,7 @@ def generate(params):
             os.makedirs(os.path.dirname(out_file_path), exist_ok=True)
             with open(in_file_path, 'r') as infile, open(out_file_path, 'w') as outfile:
                 template(infile, params_obj, outfile)
+                os.chmod(outfile.name, stat.S_IMODE(os.stat(infile.name).st_mode))
                 click.echo('.', nl=False)
     click.echo()
 
