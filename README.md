@@ -25,7 +25,7 @@ Setting this up
 
 Or just run `dotfiles.py do_everything` with the appropriate options (see `--help`) to do steps 3-7 all at once.
 
-Once the symlinks are in place, it is of course enough to edit templates and run `dotfiles.py generate`.
+Once the symlinks are in place, it is of course enough to edit templates and run `dotfiles.py generate`. Also see the `bin/redot.sh` script in my templates.
 
 ### When updating:
 
