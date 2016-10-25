@@ -110,7 +110,7 @@ def install(overwrite):
 @click.argument('params', type=click.File('r'))
 @click.option('--sensitive/--no-sensitive', default=False, help='Decrypt and use the sensitive files?')
 @click.option('--overwrite/--no-overwrite', default=False, help="Overwrite existing config files?")
-def do_everything(ctx, params, sensitive, overwrite):
+def setup_everything(ctx, params, sensitive, overwrite):
     """Setup everything."""
     if sensitive: ctx.invoke(decrypt)
     ctx.invoke(generate, params=params)
