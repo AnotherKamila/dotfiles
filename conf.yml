@@ -1,0 +1,10 @@
+# Settings for dotfiles.py
+
+decrypted_dir: decrypted
+encrypted_dir: encrypted
+template_dirs:
+  - templates
+  - decrypted
+out_dir: generated
+verify_script_filename: .dotfiles_verify.sh
+setup_env_script_filename: .dotfiles_setup.sh

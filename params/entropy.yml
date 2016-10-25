@@ -1,7 +1,15 @@
----
 # parameters for generating dotfiles used on my personal laptop (usually
 # called entropy)
+SHELL:   /usr/bin/fish
 EDITOR:  subl -n
 BROWSER: chromium-browser --force-device-scale-factor=1.5
 PAGER:   less
----
+
+packages_to_install:
+  - tmux
+  - vim
+  - chromium-browser
+  - sublime-text
+  - cabal-install
+  - tree
+package_install_command: sudo apt install
