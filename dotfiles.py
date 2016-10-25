@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-"""deadcli.py: the Deadlock management commandline utility.
+"""dotfiles.py: *the* dotfiles management utility.
+
+URL: https://github.com/AnotherKamila/dotfiles
 
 Run with --help for usage.
 """
