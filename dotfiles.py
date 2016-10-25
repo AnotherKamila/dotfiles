@@ -46,12 +46,15 @@ def cli():
 @cli.command()
 def decrypt():
     """Decrypt sensitive files."""
-    raise NotImplementedError
+    os.makedirs(conf['decrypted_dir'], exist_ok=True)
+    cmd = 'gpg -d {encrypted_tar} | tar -C {decrypted_dir} -xzm'.format(**conf)
+    subprocess.run(cmd, shell=True) # if your conf contains bad stuff, you're doomed anyway :D
 
 @cli.command()
 def encrypt():
     """Encrypt sensitive files to prepare for inclusion in a public repo."""
-    raise NotImplementedError
+    cmd = 'tar -C {decrypted_dir} -cz . | gpg -c > {encrypted_tar}'.format(**conf)
+    subprocess.run(cmd, shell=True) # if your conf contains bad stuff, you're doomed anyway :D
 
 @cli.command()
 def verify():

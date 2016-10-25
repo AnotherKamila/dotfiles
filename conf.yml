@@ -1,7 +1,7 @@
 # Settings for dotfiles.py
 
 decrypted_dir: decrypted
-encrypted_dir: encrypted
+encrypted_tar: encrypted.tar.gpg
 template_dirs:
   - templates
   - decrypted
