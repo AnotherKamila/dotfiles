@@ -2,14 +2,30 @@
 # called entropy)
 SHELL:   /usr/bin/fish
 EDITOR:  subl -n
-BROWSER: chromium-browser --force-device-scale-factor=1.5
 PAGER:   less
+TERM:    roxterm
+FILE_MANAGER: nemo
+APP_LAUNCHER: dmenu_run
+BROWSER: chromium-browser --force-device-scale-factor=1.5
+BROWSER_PGREP: chromium
+
+WITH_I3: true
 
 packages_to_install:
-  - tmux
   - vim
+  - tmux
+  - tree
+  - cabal-install
+
   - chromium-browser
   - sublime-text
-  - cabal-install
-  - tree
+  - roxterm
+
+  - i3
+  - i3status
+  - suckless-tools
+  - xdotool
+  - xbindkeys
+  - xbacklight
+  - xclip
 package_install_command: sudo apt install

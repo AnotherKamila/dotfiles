@@ -1,0 +1,158 @@
+# Kamila's i3 config file
+# https://github.com/AnotherKamila/dotfiles
+
+set $m Mod4
+set $alt Mod1
+
+# --- variables ---
+set $term     {{TERM}}
+set $fm       {{FILE_MANAGER}}
+set $launcher {{APP_LAUNCHER}}
+set $browser  {{BROWSER}}
+
+set $browser_pgrep {{BROWSER_PGREP}}
+
+# --- appearance ---
+font pango:Terminus 14
+client.focused          #002b36 #002b36 #268bd2
+client.focused_inactive #073642 #073642 #93a1a1
+client.unfocused        #073642 #073642 #586e75
+client.urgent           #d33682 #073642 #d33682
+
+# --- defaults ---
+
+workspace_layout tabbed
+new_window pixel
+hide_edge_borders both
+
+# --- window management ---
+
+floating_modifier $m
+focus_follows_mouse yes
+
+bindsym $m+minus split h
+bindsym $m+slash split v
+bindsym $m+x layout toggle all
+
+bindsym $m+f fullscreen
+
+bindsym $m+$alt+F11 focus output 1
+bindsym $m+$alt+F12 focus output 2
+
+bindsym $m+asciitilde floating toggle
+bindsym $m+Shift+asciitilde sticky toggle
+
+bindsym $m+u focus parent
+bindsym $m+i focus child
+
+# "mouse follows focus" hack
+set $movemouse "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
+bindsym $m+h focus left; exec $movemouse
+bindsym $m+j focus down; exec $movemouse
+bindsym $m+k focus up; exec $movemouse
+bindsym $m+l focus right; exec $movemouse
+
+bindsym $m+Shift+h move left; exec $movemouse
+bindsym $m+Shift+j move down; exec $movemouse
+bindsym $m+Shift+k move up; exec $movemouse
+bindsym $m+Shift+l move right; exec $movemouse
+
+bindsym $alt+F4 kill
+bindsym --whole-window $m+button2 kill
+
+mode "resize" {
+    bindsym h   resize shrink width 10 px or 10 ppt
+    bindsym j   resize grow height 10 px or 10 ppt
+    bindsym k   resize shrink height 10 px or 10 ppt
+    bindsym l   resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $m+r mode "resize"
+
+# caps lock is remapped to this in .Xmodmap
+bindsym $m+space workspace back_and_forth
+bindsym $m+Shift+space move container to workspace back_and_forth
+
+# switch back when pressing the current workspace
+workspace_auto_back_and_forth yes
+
+bindsym $m+Shift+quotedbl exec i3-input -P 'Mark window: ' -F 'mark "%s"' -l 1
+bindsym $m+apostrophe exec i3-input -P 'Go to mark: ' -F '[con_mark="%s"] focus' -l 1
+
+# --- other essential keybindings ---
+
+bindsym $m+Return exec $term
+bindsym $m+Escape exec --no-startup-id $launcher
+bindsym $m+BackSpace exec $file_manager
+
+bindsym $m+Shift+Escape exec i3-input -P 'WM command: '
+
+bindsym $m+Shift+c reload
+bindsym $m+Shift+r restart
+
+# --- for-window settings ---
+
+# --- i3bar ---
+bar {
+    status_command i3status
+    position top
+    tray_output primary
+    strip_workspace_numbers yes
+
+    colors {
+        background #002b36
+        statusline #839496
+        focused_workspace  #268bd2 #268bd2 #073642
+        active_workspace   #859900 #073642 #859900
+        inactive_workspace #002b36 #002b36 #586e75
+        urgent_workspace   #d33682 #073642 #d33682
+    }
+}
+
+# --- workspaces ---
+bindsym $m+1   workspace number 1
+bindsym $m+2   workspace number 2
+bindsym $m+3   workspace number 3
+bindsym $m+4   workspace number 4
+bindsym $m+5   workspace number 5
+bindsym $m+6   workspace number 6
+bindsym $m+7   workspace number 7
+bindsym $m+8   workspace number 8
+bindsym $m+9   workspace number 9
+bindsym $m+0   workspace number 10
+
+bindsym $m+Shift+1 move container to workspace number 1
+bindsym $m+Shift+2 move container to workspace number 2
+bindsym $m+Shift+3 move container to workspace number 3
+bindsym $m+Shift+4 move container to workspace number 4
+bindsym $m+Shift+5 move container to workspace number 5
+bindsym $m+Shift+6 move container to workspace number 6
+bindsym $m+Shift+7 move container to workspace number 7
+bindsym $m+Shift+8 move container to workspace number 8
+bindsym $m+Shift+9 move container to workspace number 9
+bindsym $m+Shift+0 move container to workspace number 10
+
+bindsym $m+w workspace 11:www; exec sh -c "pgrep $browser_pgrep || $browser"
+bindsym $m+Shift+w move container to workspace 11:www
+
+#bindsym $m+m workspace music; exec $music_player
+#bindsym $m+Shift+m move container to workspace music
+
+bindsym $m+o scratchpad show
+bindsym $m+Shift+o move scratchpad
+
+bindsym $m+m workspace ⌂
+bindsym $m+Shift+m move container to workspace ⌂
+
+bindsym $m+Right workspace next_on_output
+bindsym	$m+Shift+Right move container to workspace next_on_output
+bindsym $m+Left workspace prev_on_output
+bindsym $m+Shift+Left move container to workspace prev_on_output
+
+#bindsym $m+$alt+F7 move workspace to output next
+
+# --- startup programs ---
+#exec --no-startup-id compton -CGf -i0.8 --use-ewmh-active-win -e0.9 -b
+exec --no-startup-id ~/.config/bin/after_session_startup.sh
