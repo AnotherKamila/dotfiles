@@ -3,7 +3,8 @@
 SHELL:   /usr/bin/fish
 EDITOR:  subl -n
 PAGER:   less
-TERM:    roxterm
+TERM:    ~/bin/term_in_cwd.sh
+REAL_TERM:    roxterm
 FILE_MANAGER: nemo
 APP_LAUNCHER: dmenu_run
 BROWSER: chromium-browser
