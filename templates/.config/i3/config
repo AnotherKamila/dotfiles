@@ -6,14 +6,14 @@ set $alt Mod1
 
 # --- variables ---
 set $term     {{TERM}}
-set $fm       {{FILE_MANAGER}}
 set $launcher {{APP_LAUNCHER}}
 set $browser  {{BROWSER}}
 
+set $file_manager {{FILE_MANAGER}}
 set $browser_pgrep {{BROWSER_PGREP}}
 
 # --- appearance ---
-font pango:Terminus 14
+font pango:Terminus 12
 client.focused          #002b36 #002b36 #268bd2
 client.focused_inactive #073642 #073642 #93a1a1
 client.unfocused        #073642 #073642 #586e75

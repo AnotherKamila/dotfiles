@@ -47,14 +47,16 @@ def cli():
 def decrypt():
     """Decrypt sensitive files."""
     os.makedirs(conf['decrypted_dir'], exist_ok=True)
+    # if your conf contains bad stuff, you're doomed anyway :D
     cmd = 'gpg -d {encrypted_tar} | tar -C {decrypted_dir} -xzm'.format(**conf)
-    subprocess.run(cmd, shell=True) # if your conf contains bad stuff, you're doomed anyway :D
+    subprocess.run(cmd, shell=True)
 
 @cli.command()
 def encrypt():
     """Encrypt sensitive files to prepare for inclusion in a public repo."""
+    # if your conf contains bad stuff, you're doomed anyway :D
     cmd = 'tar -C {decrypted_dir} -cz . | gpg -c > {encrypted_tar}'.format(**conf)
-    subprocess.run(cmd, shell=True) # if your conf contains bad stuff, you're doomed anyway :D
+    subprocess.run(cmd, shell=True)
 
 @cli.command()
 def verify():

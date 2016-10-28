@@ -6,7 +6,7 @@ PAGER:   less
 TERM:    roxterm
 FILE_MANAGER: nemo
 APP_LAUNCHER: dmenu_run
-BROWSER: chromium-browser --force-device-scale-factor=1.5
+BROWSER: chromium-browser
 BROWSER_PGREP: chromium
 
 WITH_I3: true

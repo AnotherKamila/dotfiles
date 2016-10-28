@@ -35,9 +35,9 @@ ethernet enp0s31f6 {
 
 battery 0 {
     format = "%status %percentage %remaining"
-    status_chr = "⚇ CHR"
-    status_bat = "⚡ BAT"
-    status_full = "☻ FULL"
+    status_chr = "CHR"
+    status_bat = "BAT"
+    status_full = "FULL"
 }
 
 time {
