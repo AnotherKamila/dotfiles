@@ -5,4 +5,4 @@
 # from the first / to the end -- works for both terminal & file manager
 DIR="$(xdotool getactivewindow getwindowname | grep -o '/.*$')"
 [ -d "$DIR" ] || DIR="$HOME"
-{{REAL_TERM}} -d "$DIR"
+{{{REAL_TERM}}} -d "$DIR"
