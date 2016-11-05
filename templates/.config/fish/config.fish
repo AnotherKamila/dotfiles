@@ -1,3 +1,8 @@
+set -x PATH {{#ADD_TO_PATH}}{{{.}}}{{/ADD_TO_PATH}} $PATH
+
+# display "me" instead of username if it is this
+set default_user "kamila"
+
 function fish_greeting
     if which fortune > /dev/null
         # select random cowfile
@@ -5,8 +10,5 @@ function fish_greeting
         fortune | cowsay -f $cow
     end
 end
-
-# display "me" instead of username if it is this
-set default_user "kamila"
 
 . ~/.config/fish/aliases.fish
