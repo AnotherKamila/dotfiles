@@ -5,12 +5,11 @@ set $m Mod4
 set $alt Mod1
 
 # --- variables ---
-set $term     {{TERM}}
-set $launcher {{APP_LAUNCHER}}
-set $browser  {{BROWSER}}
-
-set $file_manager {{FILE_MANAGER}}
-set $browser_pgrep {{BROWSER_PGREP}}
+set $term          {{{TERM}}}
+set $launcher      {{{APP_LAUNCHER}}}
+set $file_manager  {{{FILE_MANAGER}}}
+set $browser       {{{BROWSER}}}
+set $browser_pgrep {{{BROWSER_PGREP}}}
 
 # --- appearance ---
 font pango:Terminus 12
@@ -85,7 +84,7 @@ bindsym $m+apostrophe exec i3-input -P 'Go to mark: ' -F '[con_mark="%s"] focus'
 
 bindsym $m+Return exec $term
 bindsym $m+Escape exec --no-startup-id $launcher
-bindsym $m+BackSpace exec $file_manager
+bindsym $m+BackSpace exec $file_manager ~/u
 
 bindsym $m+Shift+Escape exec i3-input -P 'WM command: '
 

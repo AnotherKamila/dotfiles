@@ -6,7 +6,7 @@ PAGER:   less
 TERM:    ~/bin/term_in_cwd.sh
 REAL_TERM:    roxterm
 FILE_MANAGER: nemo
-APP_LAUNCHER: dmenu_run
+APP_LAUNCHER: i3-dmenu-desktop --dmenu="~/bin/dmenu.sh"
 BROWSER: chromium-browser
 BROWSER_PGREP: chromium
 
