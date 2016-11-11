@@ -1,5 +1,13 @@
-# parameters for generating dotfiles used on my personal laptop (usually
-# called entropy)
+# Parameters for generating dotfiles used on my personal laptop (usually
+# called entropy).
+#
+# Setup notes:
+#
+# - as the DE I usually use i3 + Cinnamon
+#   (https://github.com/Gigadoc2/i3-cinnamon), as a lot of thing work well in
+#   this setup these days (like XDG autostart -- even xbindkeys is detected
+#   and added automatically!)
+
 SHELL:   /usr/bin/fish
 EDITOR:  subl -n
 PAGER:   less
@@ -32,4 +40,6 @@ packages_to_install:
   - xbindkeys
   - xbacklight
   - xclip
+
+  - wcalc
 package_install_command: sudo apt install

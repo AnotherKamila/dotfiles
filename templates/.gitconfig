@@ -9,7 +9,8 @@
 	p  = add --patch
 	br = branch
 	co = checkout
-	lg = log --all --graph --color --pretty=format:'%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
+	lg = log --graph --color --decorate --pretty=format:'%C(green)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
+	la = log --all --graph --color --pretty=format:'%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
 [core]
 	pager = {{{PAGER}}}
 [diff]
