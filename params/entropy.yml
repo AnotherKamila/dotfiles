@@ -22,6 +22,7 @@ WITH_I3: true
 
 ADD_TO_PATH:
   - ~/.local/bin
+  - ~/cdist/bin
 
 packages_to_install:
   - vim
