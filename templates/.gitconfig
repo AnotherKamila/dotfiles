@@ -9,8 +9,11 @@
 	p  = add --patch
 	br = branch
 	co = checkout
-	lg = log --graph --color --decorate --pretty=format:'%C(green)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
+	lg = log --graph --color --decorate --pretty=format:'%C(cyan)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
 	la = log --all --graph --color --pretty=format:'%C(yellow)%h%C(reset) -%C(red)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
+	undo-commit = reset HEAD~
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	publish = "!git push public $(git branch-name)"
 [core]
 	pager = {{{PAGER}}}
 [diff]

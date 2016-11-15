@@ -1,4 +1,4 @@
-set -x PATH {{#ADD_TO_PATH}}{{{.}}}{{/ADD_TO_PATH}} $PATH
+set -x PATH {{#ADD_TO_PATH}}{{{.}}} {{/ADD_TO_PATH}} $PATH
 
 # display "me" instead of username if it is this
 set default_user "kamila"
@@ -12,3 +12,7 @@ function fish_greeting
 end
 
 . ~/.config/fish/aliases.fish
+
+if [ -f ~/.config/fish/cdist-generated.fish ]
+    . ~/.config/fish/cdist-generated.fish
+end
