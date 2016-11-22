@@ -1,0 +1,11 @@
+# Parameters for generating dotfiles used on "nice" (i.e. convenient, friendly) servers.
+
+SHELL:   /usr/bin/fish
+EDITOR:  vim
+PAGER:   less
+
+WITH_I3: false
+
+ADD_TO_PATH:
+  - ~/.local/bin
+  - ~/cdist/bin
