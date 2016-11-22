@@ -4,6 +4,7 @@
 # $1: identification
 # $2: command
 check_program_exists() {
+	[ -z "$2" ] && return 0
 	which $2 >/dev/null || echo "$1 missing: $2"
 }
 
