@@ -2,6 +2,7 @@ alias e  '{{EDITOR}}'
 alias l 'ls'
 alias t 'tree -F'
 alias o 'xdg-open'
+alias s 'mosh'
 
 alias st 'git status'
 alias gp 'git add -p'
