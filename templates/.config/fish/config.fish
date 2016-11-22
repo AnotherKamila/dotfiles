@@ -4,7 +4,7 @@ set -x PATH {{#ADD_TO_PATH}}{{{.}}} {{/ADD_TO_PATH}} $PATH
 set default_user "kamila"
 
 function fish_greeting
-    if which fortune > /dev/null
+    if which fortune > /dev/null && which cowsay > /dev/null
         # select random cowfile
         set -l cow (cowsay -l | grep -v 'Cow files in' | tr ' ' '\n' | sort -R | head -n1)
         fortune | cowsay -f $cow
