@@ -4,6 +4,9 @@ alias t 'tree -F'
 alias o 'xdg-open'
 alias s 'mosh'
 
+alias su "sudo $SHELL"
+alias computer, "sudo"  # best alias ever
+
 alias st 'git status'
 alias gp 'git add -p'
 
