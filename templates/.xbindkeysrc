@@ -1,0 +1,16 @@
+# ~/.xbindkeysrc
+
+"amixer -c0 sset Master toggle"
+  XF86AudioMute
+
+"amixer -c0 sset Master 4%-"
+  XF86AudioLowerVolume
+
+"amixer -c0 sset Master 4%+"
+  XF86AudioRaiseVolume
+
+"xbacklight -inc 5"
+  XF86MonBrightnessUp
+
+"xbacklight -dec 5"
+  XF86MonBrightnessDown
