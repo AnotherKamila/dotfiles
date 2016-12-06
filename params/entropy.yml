@@ -10,6 +10,7 @@
 
 SHELL:   /usr/bin/fish
 EDITOR:  subl -n
+EDITOR_LITE: vim
 PAGER:   less
 TERM:    ~/bin/term_in_cwd.sh
 REAL_TERM:    roxterm

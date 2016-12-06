@@ -15,6 +15,7 @@
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	publish = "!git push public $(git branch-name)"
 [core]
+	editor = {{#EDITOR_LITE}}{{{EDITOR_LITE}}}{{/EDITOR_LITE}}{{^EDITOR_LITE}}{{{EDITOR}}}{{/EDITOR_LITE}}
 	pager = {{{PAGER}}}
 [diff]
 	tool = meld
