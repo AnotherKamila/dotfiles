@@ -15,3 +15,4 @@ alias py 'ptpython'
 alias u 'cd ~/u'
 
 alias dote "{{EDITOR}} ~/.dotfiles/params ~/.dotfiles/templates ~/.dotfiles/decrypted ~/.dotfiles/params/(hostname).yml"
+alias dotpull "cd ~/.dotfiles; git pull ; redot.sh"
