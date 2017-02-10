@@ -8,4 +8,3 @@ WITH_I3: false
 
 ADD_TO_PATH:
   - ~/.local/bin
-  - ~/cdist/bin

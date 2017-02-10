@@ -1,3 +1,7 @@
+if not status --is-interactive
+  exit
+end
+
 set -x PATH {{#ADD_TO_PATH}}{{{.}}} {{/ADD_TO_PATH}} $PATH
 
 # display "me" instead of username if it is this
