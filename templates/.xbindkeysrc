@@ -14,3 +14,6 @@
 
 "xbacklight -dec 5"
   XF86MonBrightnessDown
+
+"cinnamon-screensaver-command -l"
+  Control + Alt + L
