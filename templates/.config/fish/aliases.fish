@@ -1,4 +1,4 @@
-alias e  '{{EDITOR}}'
+alias e '{{EDITOR}}'
 alias l 'ls'
 alias t 'tree -F'
 alias o 'xdg-open'

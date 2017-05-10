@@ -17,3 +17,6 @@
 
 "cinnamon-screensaver-command -l"
   Control + Alt + L
+
+"xtrlock"
+  Control + Alt + semicolon
